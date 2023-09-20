@@ -14,4 +14,21 @@ jobs:
 
     - name: Setup Phar composer
       run: curl -JOL https://clue.engineering/phar-composer-latest.phar
-            
+
+    - name: Create phar
+      run: php phar-composer.phar build https://github.com/pro-boys/core:develop
+
+    - name: Open Pull Request
+      uses: peter-evans/create-pull-request@v4
+      with:
+        commit-message: >
+          Generated methods and types for GoTGramBot
+        title: >
+          Updated Methods and types for the lib
+        body: >
+          This is an automated PR.
+        branch: automated-build
+        reviewers: Anandpskerala
+        assignees: Anandpskerala
+        labels: automated
+        delete-branch: true
