@@ -1,25 +1,14 @@
-name: PHP Composer
-
+name: Phar
 on:
   workflow_dispatch: {} 
-
-permissions:
-  contents: read
-
+  
 jobs:
   build:
-
+    name: Phar php
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
 
     - name: Setup PHP Action
       uses: shivammathur/setup-php@2.26.0
             
-
-    # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
-    # Docs: https://getcomposer.org/doc/articles/scripts.md
-
-    # - name: Run test suite
-    #   run: composer run-script test
