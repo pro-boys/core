@@ -11,4 +11,7 @@ jobs:
 
     - name: Setup PHP Action
       uses: shivammathur/setup-php@2.26.0
+
+    - name: Setup Phar composer
+      run: curl -JOL https://clue.engineering/phar-composer-latest.phar
             
