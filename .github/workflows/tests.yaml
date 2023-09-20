@@ -13,10 +13,9 @@ jobs:
       uses: shivammathur/setup-php@2.26.0
 
     - name: Setup Phar composer
-      run: curl -JOL https://clue.engineering/phar-composer-latest.phar
-
-    - name: Create phar
-      run: php phar-composer.phar build https://github.com/pro-boys/core:develop
+      run: > 
+        curl -JOL https://clue.engineering/phar-composer-latest.phar
+        php phar-composer.phar build https://github.com/pro-boys/core:develop
 
     - name: Open Pull Request
       uses: peter-evans/create-pull-request@v4
